@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SENDGeck", "SENDGeck\SENDGeck.csproj", "{CBFE90F1-B603-4257-A782-1CF3653087CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{EDC5A701-97A5-4E63-81E7-11DCDD4EA546}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBFE90F1-B603-4257-A782-1CF3653087CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBFE90F1-B603-4257-A782-1CF3653087CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBFE90F1-B603-4257-A782-1CF3653087CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBFE90F1-B603-4257-A782-1CF3653087CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDC5A701-97A5-4E63-81E7-11DCDD4EA546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC5A701-97A5-4E63-81E7-11DCDD4EA546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC5A701-97A5-4E63-81E7-11DCDD4EA546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC5A701-97A5-4E63-81E7-11DCDD4EA546}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {686DF289-893A-4D78-920C-BC32825FE520}
+	EndGlobalSection
+EndGlobal
