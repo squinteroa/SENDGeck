@@ -8,7 +8,7 @@ namespace Entity
 {
     public class Paquete : Servicio
     {
-        public Paquete() : base("Paquete", 5000) { }
+        public Paquete(decimal TarifaBase) : base("Paquete", TarifaBase) { }
 
         public override decimal CalcularTarifa(float peso)
         {

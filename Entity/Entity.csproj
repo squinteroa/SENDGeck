@@ -46,7 +46,6 @@
     <Compile Include="Destinatario.cs" />
     <Compile Include="Direccion.cs" />
     <Compile Include="Guia.cs" />
-    <Compile Include="ICalculadorCosto.cs" />
     <Compile Include="IRepositorioGuia.cs" />
     <Compile Include="Paquete.cs" />
     <Compile Include="Remitente.cs" />

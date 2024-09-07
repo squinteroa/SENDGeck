@@ -8,7 +8,6 @@ namespace Entity
 {
     public abstract class Servicio
     {
-        {
         public string Nombre { get; protected set; }
         public decimal TarifaBase { get; protected set; }
         public Servicio(string nombre, decimal tarifaBase)
@@ -18,5 +17,4 @@ namespace Entity
         }
         public abstract decimal CalcularTarifa(float peso);
     }
-}
 }

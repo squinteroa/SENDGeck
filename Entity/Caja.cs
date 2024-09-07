@@ -8,16 +8,16 @@ namespace Entity
 {
     public class Caja : Servicio
     {
-        private decimal tarifaVolumen;
+        private decimal TarifaVolumen;
 
-        public Caja() : base("Caja", 5000)
+        public Caja(decimal TarifaBase, decimal tarifaVolumen) : base("Caja", TarifaBase)
         {
-            tarifaVolumen = 25000;
+            TarifaVolumen = tarifaVolumen;
         }
 
         public override decimal CalcularTarifa(float peso)
         {
-            return TarifaBase * (decimal)peso + tarifaVolumen;
+            return TarifaBase * (decimal)peso + TarifaVolumen;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class RepositorioGuia
+    public class RepositorioGuia : IRepositorioGuia
     {
         private readonly ICollection<Guia> _collection;
 
@@ -20,7 +20,12 @@ namespace Entity
             _collection.Add(guia);
         }
 
-        public Guia ConsultarGuia(int numeroGuia)
+        //public List<Guia> ConsultaGeneral()
+        //{
+        //    return _collection
+        //}
+
+        public Guia ConsultarGuiaNumeroGuia(int numeroGuia)
         {
             foreach (var guia in _collection)
             {

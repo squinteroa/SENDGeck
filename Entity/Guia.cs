@@ -8,32 +8,41 @@ namespace Entity
 {
     public class Guia
     {
-        public int NumeroGuia { get; set; }
-        public float Peso { get; set; }
-        public decimal ValorDeclarado { get; set; }
-        public bool Internacional { get; set; }
-        public string EstadoGuia { get; set; } = "DESPACHO";
-        public Destinatario Destinatario { get; set; }
-        public Remitente Remitente { get; set; }
-        public Servicio TipoServicio { get; set; }
+        public int NumeroGuia { get; protected set; }
+        public float Peso { get; protected set; }
+        public decimal ValorDeclarado { get; protected  set; }
+        public bool EsInternacional { get; protected set; }
+        public string EstadoGuia { get; protected set; }
+        public Destinatario Destinatario { get; protected set; }
+        public Remitente Remitente { get; protected set; }
+        public Servicio TipoServicio { get; protected set; }
 
-        private readonly ICalculadorCosto _calculadorCosto;
-
-        public Guia(ICalculadorCosto calculadorCosto)
+        public Guia(int numeroGuia, float peso, decimal valorDeclarado, bool esInternacional, Destinatario destinatario, Remitente remitente, Servicio tipoServicio)
         {
-            _calculadorCosto = calculadorCosto;
+            NumeroGuia = numeroGuia;
+            Peso = peso;
+            ValorDeclarado = valorDeclarado;
+            EsInternacional = esInternacional;
+            EstadoGuia = "DESPACHO";
+            Destinatario = destinatario ?? throw new ArgumentNullException(nameof(destinatario));
+            Remitente = remitente ?? throw new ArgumentNullException(nameof(remitente));
+            TipoServicio = tipoServicio ?? throw new ArgumentNullException(nameof(tipoServicio));
         }
 
-        public void RegistrarEntrega()
+        public decimal CalcularCosto()
+        {
+            decimal costo = TipoServicio.CalcularTarifa(Peso);
+            if (EsInternacional)
+            {
+                costo += costo * 0.25m;
+            }
+            return costo;
+        }
+
+        public void FinalizarEntrega()
         {
             EstadoGuia = "FINALIZADA";
-            decimal costo = _calculadorCosto.CalcularCosto(this);
-            Console.WriteLine($"Entrega registrada. Costo del servicio: {costo:C}");
-        }
-
-        public string ConsultarEstado()
-        {
-            return EstadoGuia;
+            Console.WriteLine($"Guía {NumeroGuia} finalizada. Costo total: {CalcularCosto()}");
         }
     }
 }
